@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icons/list-check-solid.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts/script.js" defer></script>
+    <title>Task Manager</title>
+</head>
+
+<body>
+    <nav id="nav">
+        <div id="side-bar"></div>
+        <h3>Task Manager</h3>
+        <div id="profit-pic"></div>
+    </nav>
+    <div id="main-div">
+        <div class="innerdiv">
+            <div id="pending" class="main-container">
+                <div class="nameofblock pen">
+                    <h3>Pending</h3>
+                    <!--modal-->
+                    <div class="modal" id="modal1">
+                        <div class="modal-header">
+                            <div class="title">Add New Task</div>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" id="todo_intput">
+                        </div>
+                        <div class="modal-buttons">
+                            <button class="inputbuttons" id="addbutton">Add</button>
+                            <button data-target="#modal1"" class="close-button inputbuttons">close</button>
+                        </div>
+                    </div>
+                    <div id="overlay"></div>
+                    <!--addtaskbutton-->
+                    <button  class="btn" data-target="#modal1" id="new-task-button">
+                        Add Task
+                    </button>
+                </div>
+                <div class="container" id="pending_container">
+                    <div class="draggable" draggable="true">Hello this first item
+                        <span class="close">&times</span>
+                    </div>
+                    <div class="draggable" draggable="true">this is second
+                        <span class="close">&times</span>
+                    </div>
+                </div>
+            </div>
+            <div id="working" class="main-container">
+                <div class="nameofblock work"><h3>Working on</h3></div>
+                <div class="container">
+                    <div class="draggable" draggable="true">
+                        this is testing
+                        <span class="close">&times</span>
+                    </div>  
+                    <div class="draggable" draggable="true">fagafja
+                        <span class="close">&times</span>
+                    </div>
+                </div>
+            </div>
+            <div id="completed" class="main-container">
+                <div class="nameofblock com"><h3>Completed</h3></div>
+                <div class="container">
+                    <div class="draggable" draggable="true">asgahaerh
+                        <span class="close">&times</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</body>
+
+</html>
