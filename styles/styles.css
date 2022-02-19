@@ -1,0 +1,243 @@
+body {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 700;
+  border: 0px;
+}
+
+#nav {
+  height: 4rem;
+  width: 100%;
+  background-color: #F9F9F9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#side_bar {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 0.5rem;
+  background-color: aquamarine;
+}
+
+#profit_pic {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+}
+
+#main_div {
+  height: 100%;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.innerdiv{
+  height: 40rem;
+  width: 100vw;
+  margin: 3.5rem 0rem;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.main_container{
+  height: 40rem;
+  width: 30rem;
+  margin: 0rem 1.5rem;
+  border-radius: 2px;
+}
+#pending {
+  background-color: #f3f6fd;
+}
+
+#working {
+  background-color: #f3f6fd;
+}
+
+#completed {
+  background-color: #f3f6fd;
+}
+
+.pen{
+  background-color: #e9effd;
+}
+.work{
+  background-color: #e9effd;
+}
+.com{
+  background-color: #e9effd;
+}
+.nameofblock {
+  height: 4rem;
+  width: 30rem;
+  border-radius: 2px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.nameofblock h3{
+  margin: 0rem;
+}
+.container{
+  height: 34rem;
+  width: 30rem;
+  margin: 1rem 0rem;
+  display: flex;
+  align-content: flex-start;
+  flex-direction: column;
+}
+
+
+/* ------drabbables---------*/
+.draggable{
+  width: 25.5rem;
+  height: 4rem;
+  margin: 0.5rem 0.75rem;
+  padding: 0rem 1.5rem;
+  font-size: medium;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffffff;
+}
+.draggable:hover .close{
+  display: flex;
+}
+.draggable .close{
+  position: absolute;
+  cursor: pointer;
+  display: none;
+  right: 1rem;
+  font-size: 2rem;
+  color: rgb(172, 172, 172);
+}
+.draggable .close:hover{
+  color: #f7444e;
+}
+
+/* -----new task button------*/
+#new_task_button{
+  height: 1.5rem;
+  width: 5rem;
+  position: absolute;
+  right: 1rem;
+  border: 0px;
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+#new_task_button:hover{
+  background-color: #c2d3fb;
+}
+
+
+/* -----modal----- */
+.modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 2px;
+  z-index: 100;
+  background-color: #ffffff;
+  width: 30rem;
+  height: auto;
+  max-width: 40rem;
+}
+
+
+.modal.active{
+  transform: translate(-50%,-50%) scale(1);
+}
+.modal_header{
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* box-shadow: 0px 3px 3px -3px black; */
+}
+
+.modal_header .title{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.modal_header .close-buttom{
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.modal_body{
+  height: auto;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+}
+#todo_intput{
+  width: 100%;
+  line-height: 1.8rem;
+  font-size: 1rem;
+}
+.modal_buttons{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.modal_buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#addbutton{
+  width: 50%;
+  height: 1.8rem;
+  font-size: 1rem;
+  margin: 0px;
+  border: 0px;
+}
+#addbutton:hover{
+  background-color: #6eeb6a;
+}
+.close_button{
+  width: 50%;
+  height: 1.8rem;
+  font-size: 1rem;
+  margin: 0px;
+  border: 0px;
+}
+.close_button:hover {
+  background-color: #f7444e;
+} 
+#overlay{
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active{
+  opacity: 1;
+  pointer-events: all;
+}
+
+

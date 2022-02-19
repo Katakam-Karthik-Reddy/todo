@@ -1,3 +1,5 @@
+
+
 const todos = document.querySelectorAll(".draggable");
 const containers = document.querySelectorAll(".container");
 let draggableTodo = null;
@@ -71,7 +73,7 @@ function getDragAfterElement(container ,y){
 /* --------modal------*/
 
 const btns = document.querySelectorAll("[data-target]");
-const closebtn = document.querySelectorAll(".close-button");
+const closebtn = document.querySelectorAll(".close_button");
 const overlay = document.getElementById("overlay");
 
 
@@ -107,41 +109,43 @@ todosubmit.addEventListener("click", createtodo);
 
 
 
-var input = document.getElementById("addbutton");
-input.addEventListener("keyup", (e) => {
-    if(modal1.classList.container("active") && e.key=== 'Enter'){
-        event.preventDefault();
-        document.getElementById(todosubmit).click();
-    }
-});
+// var input = document.getElementById("addbutton");
+// input.addEventListener("keyup", (e) => {
+//     if(modal1.classList.container("active") && e.key=== 'Enter'){
+//         e.preventDefault();
+//         document.getElementById(todosubmit).click();
+//     }
+// });
 function createtodo(){
     const todo_div = document.createElement("div");
     const intput_val = document.getElementById("todo_intput").value;
     const txt = document.createTextNode(intput_val);
 
-    todo_div.appendChild(txt);
-    todo_div.classList.add("draggable");
-    todo_div.setAttribute("draggable", "true");
+    if(txt.length!==0){
+        todo_div.appendChild(txt);
+        todo_div.classList.add("draggable");
+        todo_div.setAttribute("draggable", "true");
 
-    //appending span
-    const  span = document.createElement("spam");
-    const span_txt = document.createTextNode("\u00D7");
-    span.classList.add("close");
-    span.appendChild(span_txt);
-    todo_div.appendChild(span);
+        //appending span
+        const  span = document.createElement("spam");
+        const span_txt = document.createTextNode("\u00D7");
+        span.classList.add("close");
+        span.appendChild(span_txt);
+        todo_div.appendChild(span);
 
-    pending_container.prepend(todo_div);
-    
-    todo_div.addEventListener("dragstart", dragstart);
-    todo_div.addEventListener("dragend", dragend);
-    span.addEventListener("click", ()=> span.parentNode.remove(todo_div));
-    
-    document.getElementById("todo_intput").value = "";
-
+        pending_container.prepend(todo_div);
+        
+        todo_div.addEventListener("dragstart", dragstart);
+        todo_div.addEventListener("dragend", dragend);
+        span.addEventListener("click", ()=> span.parentNode.remove(todo_div));
+        
+        document.getElementById("todo_intput").value = "";
+    }
     //closing modal
 
     modal1.classList.remove("active");
     overlay.classList.remove("active");
+
 }   
 
 const deletediv = document.querySelectorAll(".close");
